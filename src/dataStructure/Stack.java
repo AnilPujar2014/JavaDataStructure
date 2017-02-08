@@ -18,7 +18,7 @@ public class Stack {
 	public int pop() {
 		return data[top--];
 	}
-	
+
 	public char popChar() {
 		return (char) data[top--];
 	}

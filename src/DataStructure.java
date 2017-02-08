@@ -4,6 +4,9 @@ import java.util.Vector;
 
 import dataStructure.GenQueue;
 import dataStructure.Stack;
+import dataStructure.sort.BubbleSort;
+import dataStructure.sort.InsertionSort;
+import dataStructure.sort.SelectionSort;
 
 public class DataStructure {
 
@@ -54,6 +57,8 @@ public class DataStructure {
 		empList.enqueue(emp1);
 		empList.enqueue(emp2);
 		System.out.println("The employees' names are:");
+
+		System.out.println(empList);
 
 		while (empList.hasItems()) {
 			Employee emp = empList.dequeue();
@@ -109,6 +114,56 @@ public class DataStructure {
 		System.out.println(lList);
 		lList.subList(2, 4).clear();
 		System.out.println(lList);
+
+		// 12. Execute BubbleSort
+		int maxSize = 100; // array size
+		BubbleSort arr, tempArray; // reference to array
+		arr = new BubbleSort(maxSize); // create the array
+		arr.insert(77); // insert 10 items
+		arr.insert(99);
+		arr.insert(44);
+		arr.insert(55);
+		arr.insert(22);
+		arr.insert(88);
+		arr.insert(11);
+		arr.insert(00);
+		arr.insert(66);
+		arr.insert(33);
+		tempArray = arr;
+		arr.display(); // display items
+		arr.bubbleSort(); // bubble sort them
+
+		arr.display(); // display them again
+
+		// 13. Excecute SelectionSort
+		SelectionSort selArray = new SelectionSort(maxSize);
+		selArray.insert(77); // insert 10 items
+		selArray.insert(99);
+		selArray.insert(44);
+		selArray.insert(55);
+		selArray.insert(22);
+		selArray.insert(88);
+
+		selArray.display(); // display items
+		selArray.selectionSort(); // bubble sort them
+
+		selArray.display(); // display them again
+
+		// 14. Insertion Sort
+		int[] arr1 = { 9, 14, 3, 2, 43, 11, 58, 22 };
+		System.out.println("Before Insertion Sort");
+		for (int i : arr1) {
+			System.out.print(i + " ");
+		}
+		System.out.println();
+
+		InsertionSort.insertionSort(arr1);// sorting array using insertion sort
+
+		System.out.println("After Insertion Sort");
+		for (int i : arr1) {
+			System.out.print(i + " ");
+		}
+
 	}
 
 }
